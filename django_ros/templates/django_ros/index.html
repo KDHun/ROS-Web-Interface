@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ROS | Web Navigation </title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'indexcss.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head> 
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="{% static 'images.jpeg' %}" alt="My image" class = "logo">
+	<a href="#" class="navbar-brand">Robot<b>Control</b></a>  		
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- Collection of nav links, forms, and other content for toggling -->
+	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+		<div class="navbar-nav">
+			<a href="#" class="nav-item nav-link">Home</a>
+			<a href="#" class="nav-item nav-link">About</a>			
+			<div class="nav-item dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle">Services</a>
+				<div class="dropdown-menu">					
+					<a href="#" class="dropdown-item">Web Design</a>
+					<a href="#" class="dropdown-item">Web Development</a>
+					<a href="#" class="dropdown-item">Graphic Design</a>
+					<a href="#" class="dropdown-item">Digital Marketing</a>
+				</div>
+            </div>
+			<a href="#" class="nav-item nav-link active">Pricing</a>
+			<a href="#" class="nav-item nav-link">Blog</a>
+			<a href="#" class="nav-item nav-link">Contact</a>
+        </div>
+		<form class="navbar-form form-inline search-form">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search...">
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+				</span>
+			</div>
+		</form>
+		<div class="navbar-nav ml-auto">
+			<div class="nav-item dropdown login-dropdown">
+				<a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle"><i class="fa fa-user-o"></i> Login</a>
+				<div class="dropdown-menu">					
+                    <form class="form-inline login-form" action="/examples/actions/confirmation.php" method="post">
+                        <div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<span class="fa fa-user"></span>
+								</span>                    
+							</div>
+                            <input type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fa fa-lock"></i>
+								</span>                    
+							</div>
+                            <input type="text" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>			
+        </div>
+	</div>
+</nav>
+
+<div class="container divpadding">
+	<div class="row">
+	  <div class="col">
+		<div class="row">
+			<div class="col btncenter" >
+				<button type="button" class="btn btn-primary btn-lg">Farward</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col btncenter">
+				<button type="button" class="btn btn-secondary btn-lg">Left</button>
+			</div>
+			<div class="col btncenter">
+				<button type="button" class="btn btn-secondary btn-lg">Right</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col btncenter">
+				<button type="button" class="btn btn-primary btn-lg">Backward</button>
+			</div>
+		</div>
+		{% comment %} <div>
+			<button type="button" class="btn btn-primary btn-lg">Farward</button>
+			<button type="button" class="btn btn-secondary btn-lg">Left</button>
+			<button type="button" class="btn btn-secondary btn-lg">Right</button>
+			<button type="button" class="btn btn-primary btn-lg">Backward</button>
+		</div> {% endcomment %}
+	  </div>
+	  <div class="col">
+		<div class="embed-responsive embed-responsive-16by9">
+			{% comment %} <iframe class="embed-responsive-item" src="https://youtu.be/vX2cDW8LUWk" allowfullscreen></iframe> {% endcomment %}
+			<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vX2cDW8LUWk" title="Excuses (Official Video) | AP Dhillon | Gurinder Gill | Intense" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	  </div>
+	</div>
+</div>
+
+{% comment %} <div class="videoclass">
+	<!-- 16:9 aspect ratio -->
+	<div class="embed-responsive embed-responsive-16by9 videoclass">
+		<button type="button" class="btn btn-primary btn-lg">Farward</button>
+		<button type="button" class="btn btn-primary btn-lg">Backward</button>
+		<button type="button" class="btn btn-secondary btn-lg">Left</button>
+		<button type="button" class="btn btn-secondary btn-lg">Right</button>
+	</div>
+	<div class="embed-responsive embed-responsive-16by9 videoclass">
+		<iframe class="embed-responsive-item" src="https://youtu.be/vX2cDW8LUWk" allowfullscreen></iframe>
+		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vX2cDW8LUWk" title="Excuses (Official Video) | AP Dhillon | Gurinder Gill | Intense" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div> {% endcomment %}
+
+</body>
+</html>
