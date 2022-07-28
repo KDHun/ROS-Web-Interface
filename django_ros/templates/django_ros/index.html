@@ -128,6 +128,19 @@
 		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vX2cDW8LUWk" title="Excuses (Official Video) | AP Dhillon | Gurinder Gill | Intense" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	</div>
 </div> {% endcomment %}
-
+<script>
+	const dataSocket = new WebSocket(
+		'ws://'
+		+ window.location.host
+		+ '/ws/data/'
+	)
+	dataSocket.onmessage = function(e) {
+		const data = JSON.parse(e.data);
+		console.log(data);
+	}
+	dataSocket.onclose = function(e) {
+		console.log('Socket closed');
+	}
+</script>
 </body>
 </html>

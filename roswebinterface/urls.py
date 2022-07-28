@@ -20,5 +20,4 @@ from django.urls import include, path
 urlpatterns = [
     path('chat/', include('django_ros.urls')),
     path('admin/', admin.site.urls),
-
 ]

@@ -9,12 +9,22 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  ros:
-    image: osrf/ros:foxy-desktop
-    environment:
-      - DISPLAY
+  simulation:
+    build: ./turtlebot3
+    restart: unless-stopped # Restart the container unless manually stopped
+
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw # GUI related
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY # GUI related
+      - QT_X11_NO_MITSHM=1 # GUI related
+      - NVIDIA_VISIBLE_DEVICES=all # GUI related
+      - NVIDIA_DRIVER_CAPABILITIES=all # GUI related
+
+    privileged: true # GUI related
+    stdin_open: true
+    tty: true
   web:
     build: .
     command: python3 manage.py runserver 0.0.0.0:8000
@@ -28,4 +38,4 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
-      - ros
+      - simulation
